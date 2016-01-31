@@ -14,6 +14,7 @@
 		D1E5BABE1C5D004C00C7F35E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E5BABC1C5D004C00C7F35E /* Main.storyboard */; };
 		D1E5BAC91C5D004C00C7F35E /* CocoaSwiftPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAC81C5D004C00C7F35E /* CocoaSwiftPlayerTests.swift */; };
 		D1E5BAD41C5D004C00C7F35E /* CocoaSwiftPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAD31C5D004C00C7F35E /* CocoaSwiftPlayerUITests.swift */; };
+		D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAE61C5E473F00C7F35E /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D1E5BACF1C5D004C00C7F35E /* CocoaSwiftPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaSwiftPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E5BAD31C5D004C00C7F35E /* CocoaSwiftPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaSwiftPlayerUITests.swift; sourceTree = "<group>"; };
 		D1E5BAD51C5D004C00C7F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1E5BAE61C5E473F00C7F35E /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = Models/Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,11 @@
 		D1E5BAB51C5D004C00C7F35E /* CocoaSwiftPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D1E5BAE41C5E46E700C7F35E /* Helpers */,
+				D1E5BAE51C5E46EB00C7F35E /* Managers */,
+				D1E5BAE11C5E46C500C7F35E /* Models */,
+				D1E5BAE31C5E46CE00C7F35E /* ViewControllers */,
+				D1E5BAE21C5E46C900C7F35E /* Views */,
 				D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */,
 				D1E5BAB81C5D004C00C7F35E /* ViewController.swift */,
 				D1E5BABA1C5D004C00C7F35E /* Assets.xcassets */,
@@ -135,6 +142,42 @@
 				D1E5BAD51C5D004C00C7F35E /* Info.plist */,
 			);
 			path = CocoaSwiftPlayerUITests;
+			sourceTree = "<group>";
+		};
+		D1E5BAE11C5E46C500C7F35E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1E5BAE61C5E473F00C7F35E /* Song.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D1E5BAE21C5E46C900C7F35E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D1E5BAE31C5E46CE00C7F35E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1E5BAE41C5E46E700C7F35E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D1E5BAE51C5E46EB00C7F35E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		FA2ADFC6F520DCCF255A8DBB /* Pods */ = {
@@ -327,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
 				D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */,
 				D1E5BAB71C5D004C00C7F35E /* AppDelegate.swift in Sources */,
 			);
