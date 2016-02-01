@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D40A389FE41AD18C941333C /* Pods_CocoaSwiftPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */; };
+		D19D07C41C5FAFB700FEBBC2 /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */; };
 		D1E5BAB71C5D004C00C7F35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */; };
 		D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAB81C5D004C00C7F35E /* ViewController.swift */; };
 		D1E5BABB1C5D004C00C7F35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E5BABA1C5D004C00C7F35E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		5DF224AE1278AFB8E2C02CBE /* Pods-CocoaSwiftPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		8752F31DED0A63E6E4DBE1FF /* Pods-CocoaSwiftPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaSwiftPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19D07C31C5FAFB600FEBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Song.storyboard; sourceTree = "<group>"; };
 		D1E5BAB31C5D004C00C7F35E /* CocoaSwiftPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaSwiftPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E5BAB81C5D004C00C7F35E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +122,6 @@
 				D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */,
 				D1E5BAB81C5D004C00C7F35E /* ViewController.swift */,
 				D1E5BABA1C5D004C00C7F35E /* Assets.xcassets */,
-				D1E5BABC1C5D004C00C7F35E /* Main.storyboard */,
 				D1E5BABF1C5D004C00C7F35E /* Info.plist */,
 			);
 			path = CocoaSwiftPlayer;
@@ -155,6 +156,8 @@
 		D1E5BAE21C5E46C900C7F35E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1E5BABC1C5D004C00C7F35E /* Main.storyboard */,
+				D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19D07C41C5FAFB700FEBBC2 /* Song.storyboard in Resources */,
 				D1E5BABB1C5D004C00C7F35E /* Assets.xcassets in Resources */,
 				D1E5BABE1C5D004C00C7F35E /* Main.storyboard in Resources */,
 			);
@@ -408,6 +412,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D19D07C31C5FAFB600FEBBC2 /* Base */,
+			);
+			name = Song.storyboard;
+			sourceTree = "<group>";
+		};
 		D1E5BABC1C5D004C00C7F35E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

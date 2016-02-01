@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +642,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CocoaSwiftPlayer" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -657,25 +658,70 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="4dO-DQ-kvT" kind="relationship" relationship="window.shadowedContentViewController" id="aHW-OH-x6q"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split View Controller-->
+        <scene sceneID="HZb-TS-rFR">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="4dO-DQ-kvT" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="07t-RB-hie"/>
+                        <splitViewItem id="nFR-iT-crH"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" id="lxA-D5-Y6n">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="e63-Lz-MPj" kind="relationship" relationship="splitItems" id="9AL-ev-uF6"/>
+                        <segue destination="FL2-xc-fZF" kind="relationship" relationship="splitItems" id="ra3-3D-mrt"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="k3t-Js-vs6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="759"/>
+        </scene>
+        <!--PlayerControl-->
+        <scene sceneID="AZO-mw-HxJ">
+            <objects>
+                <viewController id="e63-Lz-MPj" userLabel="PlayerControl" sceneMemberID="viewController">
+                    <view key="view" id="b3Z-GX-oIq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uPh-ZX-64f">
+                                <rect key="frame" x="182" y="42" width="86" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="PlayerControl" id="lrh-Nk-o45">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uPh-ZX-64f" firstAttribute="centerX" secondItem="b3Z-GX-oIq" secondAttribute="centerX" id="ABH-tD-nx4"/>
+                            <constraint firstItem="uPh-ZX-64f" firstAttribute="top" secondItem="b3Z-GX-oIq" secondAttribute="top" constant="41" id="F9s-0s-SXb"/>
+                            <constraint firstAttribute="bottom" secondItem="uPh-ZX-64f" secondAttribute="bottom" constant="42" id="Snv-kT-uSv"/>
+                            <constraint firstItem="uPh-ZX-64f" firstAttribute="centerY" secondItem="b3Z-GX-oIq" secondAttribute="centerY" id="UPb-jV-taW"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Rte-3f-EIO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="746" y="618"/>
+        </scene>
+        <!--Song-->
+        <scene sceneID="3Tg-GI-zxB">
+            <objects>
+                <controllerPlaceholder storyboardName="Song" id="FL2-xc-fZF" sceneMemberID="viewController"/>
+                <customObject id="h3Q-6a-16A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552.5" y="825"/>
         </scene>
     </scenes>
 </document>
