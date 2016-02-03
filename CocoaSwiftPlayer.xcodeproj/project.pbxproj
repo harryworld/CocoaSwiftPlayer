@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D40A389FE41AD18C941333C /* Pods_CocoaSwiftPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */; };
 		D19D07C41C5FAFB700FEBBC2 /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */; };
+		D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD36491C624A3D003881F9 /* PlayerViewController.swift */; };
+		D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD364B1C624C6E003881F9 /* PlayerManager.swift */; };
 		D1E5BAB71C5D004C00C7F35E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */; };
 		D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAB81C5D004C00C7F35E /* ViewController.swift */; };
 		D1E5BABB1C5D004C00C7F35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E5BABA1C5D004C00C7F35E /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		8752F31DED0A63E6E4DBE1FF /* Pods-CocoaSwiftPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaSwiftPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19D07C31C5FAFB600FEBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Song.storyboard; sourceTree = "<group>"; };
+		D1AD36491C624A3D003881F9 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = ViewControllers/PlayerViewController/PlayerViewController.swift; sourceTree = "<group>"; };
+		D1AD364B1C624C6E003881F9 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerManager.swift; path = Managers/PlayerManager.swift; sourceTree = "<group>"; };
 		D1E5BAB31C5D004C00C7F35E /* CocoaSwiftPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaSwiftPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E5BAB61C5D004C00C7F35E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E5BAB81C5D004C00C7F35E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 				A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1AD36481C624A0F003881F9 /* PlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1AD36491C624A3D003881F9 /* PlayerViewController.swift */,
+			);
+			name = PlayerViewController;
 			sourceTree = "<group>";
 		};
 		D1E5BAAA1C5D004B00C7F35E = {
@@ -165,6 +177,7 @@
 		D1E5BAE31C5E46CE00C7F35E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1AD36481C624A0F003881F9 /* PlayerViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 		D1E5BAE51C5E46EB00C7F35E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D1AD364B1C624C6E003881F9 /* PlayerManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -374,7 +388,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
+				D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */,
 				D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */,
 				D1E5BAB71C5D004C00C7F35E /* AppDelegate.swift in Sources */,
 			);

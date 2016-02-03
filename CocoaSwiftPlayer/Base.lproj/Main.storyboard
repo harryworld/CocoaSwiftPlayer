@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -690,7 +690,7 @@
         <!--PlayerControl-->
         <scene sceneID="AZO-mw-HxJ">
             <objects>
-                <viewController id="e63-Lz-MPj" userLabel="PlayerControl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" id="e63-Lz-MPj" userLabel="PlayerControl" customClass="PlayerViewController" customModule="CocoaSwiftPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="b3Z-GX-oIq">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="70"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -743,18 +743,21 @@
                                                 </customSpacing>
                                             </stackView>
                                             <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lec-rF-mD7">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="17"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CPq-Wh-Psc">
-                                                        <rect key="frame" x="-2" y="0.0" width="37" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="--:--" id="K6v-Dx-nQk">
+                                                        <rect key="frame" x="-2" y="0.0" width="34" height="17"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="wbk-ex-x8C"/>
+                                                        </constraints>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="--:--" id="K6v-Dx-nQk">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="aED-lw-NOF">
-                                                        <rect key="frame" x="37" y="1" width="16" height="16"/>
+                                                        <rect key="frame" x="34" y="1" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="fio-Po-CR5"/>
                                                             <constraint firstAttribute="width" constant="16" id="jg6-6C-T5s"/>
@@ -763,9 +766,12 @@
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="shuffle:" target="e63-Lz-MPj" id="QQZ-99-KvT"/>
+                                                        </connections>
                                                     </button>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Izn-YQ-lLZ">
-                                                        <rect key="frame" x="57" y="1" width="16" height="16"/>
+                                                        <rect key="frame" x="54" y="1" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="hb3-yf-UUV"/>
                                                             <constraint firstAttribute="height" constant="16" id="tuq-Jh-Hw6"/>
@@ -774,6 +780,9 @@
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="repeatPlaylist:" target="e63-Lz-MPj" id="mtw-uD-bJK"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -819,6 +828,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="rewind:" target="e63-Lz-MPj" id="XJw-hh-BZ7"/>
+                                                </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="y3M-FH-Z9T">
                                                 <rect key="frame" x="38" y="0.0" width="30" height="30"/>
@@ -830,6 +842,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="play:" target="e63-Lz-MPj" id="ARv-3k-auo"/>
+                                                </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="vty-XQ-aEe">
                                                 <rect key="frame" x="76" y="0.0" width="30" height="30"/>
@@ -841,6 +856,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="next:" target="e63-Lz-MPj" id="LX1-UO-cLK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <visibilityPriorities>
@@ -869,6 +887,15 @@
                             <constraint firstItem="sgu-NT-nhe" firstAttribute="top" secondItem="b3Z-GX-oIq" secondAttribute="top" id="ygO-0M-P80"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="vty-XQ-aEe" id="PH3-Pa-7Ra"/>
+                        <outlet property="playButton" destination="y3M-FH-Z9T" id="tkY-3g-Zgh"/>
+                        <outlet property="repeatButton" destination="Izn-YQ-lLZ" id="gAE-xk-QPL"/>
+                        <outlet property="rewindButton" destination="eHL-du-Imz" id="UlH-DL-j12"/>
+                        <outlet property="shuffleButton" destination="aED-lw-NOF" id="fg3-Ti-tID"/>
+                        <outlet property="timeLabel" destination="CPq-Wh-Psc" id="lYn-GV-qZ8"/>
+                        <outlet property="volumeSlider" destination="elt-qS-hQd" id="E3A-5E-PdX"/>
+                    </connections>
                 </viewController>
                 <customObject id="Rte-3f-EIO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
