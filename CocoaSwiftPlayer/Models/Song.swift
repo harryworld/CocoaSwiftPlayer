@@ -17,6 +17,8 @@ class Song: Object {
     dynamic var title: String = ""
     dynamic var location: String = ""
     dynamic var length: Double = 0.0
+    dynamic var artist: String = ""
+    dynamic var playCount: Int = 0
     
     dynamic var lengthText: String {
         get {
@@ -27,6 +29,9 @@ class Song: Object {
     convenience init(item: ITLibMediaItem) {
         self.init()
         self.title = item.title
+        if item.artist.name != nil {
+            self.artist = item.artist.name
+        }
         self.location = item.location.path ?? ""
         self.length = NSTimeInterval(item.totalTime) / 1000.0
     }

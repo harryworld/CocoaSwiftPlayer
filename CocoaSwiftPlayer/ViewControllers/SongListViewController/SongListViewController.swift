@@ -17,6 +17,15 @@ class SongListViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
+        RealmMigrationManager.migrate()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if !defaults.boolForKey("APP_LAUNCHED") {
+            let songManager = SongManager()
+            try! songManager.importSongs()
+            defaults.setBool(true, forKey: "APP_LAUNCHED")
+        }
+        
         let realm = try! Realm()
         let result = realm.objects(Song)
         songs = result.map { song in
