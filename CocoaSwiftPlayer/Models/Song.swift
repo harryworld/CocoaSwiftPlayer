@@ -11,16 +11,28 @@ import iTunesLibrary
 import RealmSwift
 
 class Song: Object {
+    
+    static let formatter = NSDateComponentsFormatter()
 
     dynamic var title: String = ""
     dynamic var location: String = ""
     dynamic var length: Double = 0.0
+    
+    dynamic var lengthText: String {
+        get {
+            return Song.formatter.stringFromTimeInterval(length)!
+        }
+    }
     
     convenience init(item: ITLibMediaItem) {
         self.init()
         self.title = item.title
         self.location = item.location.path ?? ""
         self.length = NSTimeInterval(item.totalTime) / 1000.0
+    }
+    
+    override static func ignoredProperties() -> [String] {
+        return ["lengthText"]
     }
     
 }

@@ -20,6 +20,7 @@
 		D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAE61C5E473F00C7F35E /* Song.swift */; };
 		D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF0A431C638A03001BC61F /* SongManager.swift */; };
 		D1FF0A491C639081001BC61F /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FF0A481C639081001BC61F /* iTunesLibrary.framework */; };
+		D1FF0A541C64DC6F001BC61F /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF0A531C64DC6F001BC61F /* SongListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D1E5BAE61C5E473F00C7F35E /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = Models/Song.swift; sourceTree = "<group>"; };
 		D1FF0A431C638A03001BC61F /* SongManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongManager.swift; path = Managers/SongManager.swift; sourceTree = "<group>"; };
 		D1FF0A481C639081001BC61F /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
+		D1FF0A531C64DC6F001BC61F /* SongListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongListViewController.swift; path = ViewControllers/SongListViewController/SongListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		D1E5BAE31C5E46CE00C7F35E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1FF0A521C64DC53001BC61F /* SongListViewController */,
 				D1AD36481C624A0F003881F9 /* PlayerViewController */,
 			);
 			name = ViewControllers;
@@ -202,6 +205,14 @@
 				D1FF0A431C638A03001BC61F /* SongManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		D1FF0A521C64DC53001BC61F /* SongListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF0A531C64DC6F001BC61F /* SongListViewController.swift */,
+			);
+			name = SongListViewController;
 			sourceTree = "<group>";
 		};
 		FA2ADFC6F520DCCF255A8DBB /* Pods */ = {
@@ -396,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FF0A541C64DC6F001BC61F /* SongListViewController.swift in Sources */,
 				D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */,
 				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
