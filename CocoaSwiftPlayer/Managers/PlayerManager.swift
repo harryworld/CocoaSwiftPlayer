@@ -8,16 +8,33 @@
 
 import Cocoa
 import AVFoundation
+import RealmSwift
 
 class PlayerManager: NSObject, AVAudioPlayerDelegate {
     
     static var sharedManager = PlayerManager()
     
-    var isPlaying: Bool = false
+    var isPlaying: Bool {
+        if let player = player {
+            return player.playing
+        } else {
+            return false
+        }
+    }
     
     var player: AVAudioPlayer?
     
-    var currentSong: Song? = nil
+    var currentSong: Song? = nil {
+        didSet {
+            if let currentSong = currentSong {
+                if currentSong.location != player?.url?.path {
+                    player = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: currentSong.location))
+                    player?.volume = volume
+                }
+            }
+        }
+    }
+    var currentPlayList: [Song] = []
     
     var isRepeated = false
     var isShuffle = false
@@ -38,11 +55,22 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     func play() {
         if isPlaying {
             pause()
+            return
         }
+        
+        if currentPlayList.isEmpty {
+            loadAllSongs()
+        }
+        
+        if currentSong == nil {
+            currentSong = currentPlayList[0]
+        }
+        
+        player?.play()
     }
     
     func pause() {
-        
+        player?.pause()
     }
     
     func next() {
@@ -59,6 +87,11 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     
     func repeatPlaylist() {
         
+    }
+    
+    private func loadAllSongs() {
+        let realm = try! Realm()
+        currentPlayList = realm.objects(Song).map { song in return song}
     }
 
 }
