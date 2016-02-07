@@ -24,13 +24,21 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     
     var player: AVAudioPlayer?
     
+    var currentIndex: Int?
     var currentSong: Song? = nil {
         didSet {
             if let currentSong = currentSong {
+                currentIndex = currentPlayList.indexOf({ song -> Bool in
+                    return song.location == currentSong.location
+                })
+                
                 if currentSong.location != player?.url?.path {
                     player = try? AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: currentSong.location))
                     player?.volume = volume
                 }
+            } else {
+                stop()
+                player = nil
             }
         }
     }
@@ -73,12 +81,30 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
         player?.pause()
     }
     
+    func stop() {
+        player?.stop()
+    }
+    
     func next() {
+        guard let currentIndex = currentIndex else { return }
         
+        if currentIndex == currentPlayList.count - 1 {
+            currentSong = nil
+        } else {
+            currentSong = currentPlayList[currentIndex + 1]
+            play()
+        }
     }
     
     func rewind() {
+        guard let currentIndex = currentIndex else { return }
         
+        if currentIndex == 0 {
+            currentSong = nil
+        } else {
+            currentSong = currentPlayList[currentIndex - 1]
+            play()
+        }
     }
     
     func shuffle() {
