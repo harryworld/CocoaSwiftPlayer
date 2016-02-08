@@ -44,7 +44,11 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     }
     var currentPlayList: [Song] = []
     
-    var isRepeated = false
+    var isRepeated = false {
+        didSet {
+            print("isRepeat: \(isRepeated)")
+        }
+    }
     var isShuffle = false
     var volume: Float = 0.5
     
@@ -88,8 +92,11 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     func next() {
         guard let currentIndex = currentIndex else { return }
         
-        if currentIndex == currentPlayList.count - 1 {
+        if !isRepeated && currentIndex == currentPlayList.count - 1 {
             currentSong = nil
+        } else if isRepeated && currentIndex == currentPlayList.count - 1 {
+            currentSong = currentPlayList.first
+            play()
         } else {
             currentSong = currentPlayList[currentIndex + 1]
             play()
@@ -99,8 +106,11 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     func rewind() {
         guard let currentIndex = currentIndex else { return }
         
-        if currentIndex == 0 {
+        if !isRepeated && currentIndex == 0 {
             currentSong = nil
+        } else if isRepeated && currentIndex == 0 {
+            currentSong = currentPlayList.last
+            play()
         } else {
             currentSong = currentPlayList[currentIndex - 1]
             play()
@@ -108,10 +118,6 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     }
     
     func shuffle() {
-        
-    }
-    
-    func repeatPlaylist() {
         
     }
     

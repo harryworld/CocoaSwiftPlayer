@@ -52,7 +52,8 @@ class PlayerViewController: NSViewController {
     }
     
     @IBAction func repeatPlaylist(sender: NSButton) {
-        manager.repeatPlaylist()
+        manager.isRepeated = !manager.isRepeated
+        
     }
     
 }
