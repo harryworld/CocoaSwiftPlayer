@@ -10,8 +10,10 @@ import Foundation
 
 extension CollectionType {
     
-    func shuffle() -> [Song] {
-        return []
+    func shuffle() -> [Generator.Element] {
+        var list = Array(self)
+        list.shuffleInPlace()
+        return list
     }
     
 }

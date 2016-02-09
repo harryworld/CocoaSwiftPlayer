@@ -42,14 +42,42 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
             }
         }
     }
+    // The currently using list
     var currentPlayList: [Song] = []
+    // Made of default playlist
+    var shufflePlayList: [Song] = []
+    // Default Playlist
+    var playList: [Song] = [] {
+        didSet {
+            if !isShuffle {
+                currentPlayList = playList
+            }
+        }
+    }
     
     var isRepeated = false {
         didSet {
             print("isRepeat: \(isRepeated)")
         }
     }
-    var isShuffle = false
+    var isShuffle = false {
+        didSet {
+            print("isShuffle: \(isShuffle)")
+            if isShuffle {
+                if let currentSong = currentSong {
+                    let list = playList.filter { song -> Bool in
+                        return song.location != currentSong.location
+                    }
+                    shufflePlayList = [currentSong] + list.shuffle()
+                } else {
+                    shufflePlayList = playList.shuffle()
+                }
+                currentPlayList = shufflePlayList
+            } else {
+                currentPlayList = playList
+            }
+        }
+    }
     var volume: Float = 0.5
     
     // MARK: - Lifecycle Methods
@@ -117,13 +145,9 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
         }
     }
     
-    func shuffle() {
-        
-    }
-    
     private func loadAllSongs() {
         let realm = try! Realm()
-        currentPlayList = realm.objects(Song).map { song in return song}
+        playList = realm.objects(Song).map { song in return song}
     }
 
 }
