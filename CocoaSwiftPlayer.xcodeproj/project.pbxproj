@@ -10,6 +10,7 @@
 		2D40A389FE41AD18C941333C /* Pods_CocoaSwiftPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */; };
 		D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */; };
 		D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */; };
+		D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF81C6B7ABD00773B8E /* Constants.swift */; };
 		D19D07C41C5FAFB700FEBBC2 /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */; };
 		D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD36491C624A3D003881F9 /* PlayerViewController.swift */; };
 		D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD364B1C624C6E003881F9 /* PlayerManager.swift */; };
@@ -49,6 +50,7 @@
 		A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaSwiftPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollectionType+Extensions.swift"; path = "Extensions/MutableCollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+Extensions.swift"; path = "Extensions/CollectionType+Extensions.swift"; sourceTree = "<group>"; };
+		D1573EF81C6B7ABD00773B8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
 		D19D07C31C5FAFB600FEBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Song.storyboard; sourceTree = "<group>"; };
 		D1AD36491C624A3D003881F9 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = ViewControllers/PlayerViewController/PlayerViewController.swift; sourceTree = "<group>"; };
 		D1AD364B1C624C6E003881F9 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerManager.swift; path = Managers/PlayerManager.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		D1E5BAE41C5E46E700C7F35E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D1573EF81C6B7ABD00773B8E /* Constants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1FF0A541C64DC6F001BC61F /* SongListViewController.swift in Sources */,
+				D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */,
 				D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */,
 				D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */,
 				D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */,
