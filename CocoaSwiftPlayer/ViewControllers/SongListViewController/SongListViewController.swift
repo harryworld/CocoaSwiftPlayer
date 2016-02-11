@@ -35,6 +35,8 @@ class SongListViewController: NSViewController {
         }
         
         tableView.doubleAction = "doubleClick:"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeSong:", name: Constants.Notifications.ChangeSong, object: nil)
     }
     
     func doubleClick(sender: NSTableView) {
@@ -44,6 +46,21 @@ class SongListViewController: NSViewController {
             manager.currentSong = songs[tableView.selectedRow]
         }
         manager.play()
+    }
+    
+    // MARK: - Notification
+    
+    func changeSong(notification: NSNotification) {
+        guard let song = notification.userInfo?[Constants.NotificationUserInfos.Song] as? Song else { return }
+        
+        let index = songs.indexOf { s in
+            return s.location == song.location
+        }
+        
+        if let index = index {
+            tableView.selectRowIndexes(NSIndexSet(index: index), byExtendingSelection: false)
+            tableView.scrollRowToVisible(index)
+        }
     }
     
 }
