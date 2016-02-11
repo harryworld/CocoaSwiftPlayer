@@ -872,6 +872,14 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-d5-SZ7">
+                                        <rect key="frame" x="226" y="5" width="110" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="mpR-zX-6vp">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="naK-cz-ZwQ" firstAttribute="centerY" secondItem="sgu-NT-nhe" secondAttribute="centerY" id="J84-dZ-vRZ"/>
@@ -893,6 +901,7 @@
                         <outlet property="repeatButton" destination="Izn-YQ-lLZ" id="gAE-xk-QPL"/>
                         <outlet property="rewindButton" destination="eHL-du-Imz" id="UlH-DL-j12"/>
                         <outlet property="shuffleButton" destination="aED-lw-NOF" id="fg3-Ti-tID"/>
+                        <outlet property="songTitleLabel" destination="ccf-d5-SZ7" id="2I3-JL-Hrb"/>
                         <outlet property="timeLabel" destination="CPq-Wh-Psc" id="lYn-GV-qZ8"/>
                         <outlet property="volumeSlider" destination="elt-qS-hQd" id="E3A-5E-PdX"/>
                     </connections>
