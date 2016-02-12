@@ -11,6 +11,7 @@
 		D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */; };
 		D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */; };
 		D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF81C6B7ABD00773B8E /* Constants.swift */; };
+		D1573EFC1C6DFA3500773B8E /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EFB1C6DFA3500773B8E /* PlaylistViewController.swift */; };
 		D19D07C41C5FAFB700FEBBC2 /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */; };
 		D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD36491C624A3D003881F9 /* PlayerViewController.swift */; };
 		D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD364B1C624C6E003881F9 /* PlayerManager.swift */; };
@@ -51,6 +52,7 @@
 		D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollectionType+Extensions.swift"; path = "Extensions/MutableCollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+Extensions.swift"; path = "Extensions/CollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF81C6B7ABD00773B8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
+		D1573EFB1C6DFA3500773B8E /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = ViewControllers/PlaylistViewController/PlaylistViewController.swift; sourceTree = "<group>"; };
 		D19D07C31C5FAFB600FEBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Song.storyboard; sourceTree = "<group>"; };
 		D1AD36491C624A3D003881F9 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = ViewControllers/PlayerViewController/PlayerViewController.swift; sourceTree = "<group>"; };
 		D1AD364B1C624C6E003881F9 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerManager.swift; path = Managers/PlayerManager.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 				D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D1573EFA1C6DFA1800773B8E /* PlaylistViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1573EFB1C6DFA3500773B8E /* PlaylistViewController.swift */,
+			);
+			name = PlaylistViewController;
 			sourceTree = "<group>";
 		};
 		D1AD36481C624A0F003881F9 /* PlayerViewController */ = {
@@ -203,6 +213,7 @@
 		D1E5BAE31C5E46CE00C7F35E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1573EFA1C6DFA1800773B8E /* PlaylistViewController */,
 				D1FF0A521C64DC53001BC61F /* SongListViewController */,
 				D1AD36481C624A0F003881F9 /* PlayerViewController */,
 			);
@@ -435,6 +446,7 @@
 				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
 				D1FF0A561C64E0FD001BC61F /* RealmMigrationManager.swift in Sources */,
+				D1573EFC1C6DFA3500773B8E /* PlaylistViewController.swift in Sources */,
 				D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */,
 				D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */,
 				D1E5BAB71C5D004C00C7F35E /* AppDelegate.swift in Sources */,

@@ -29,7 +29,7 @@
         <!--Playlist-->
         <scene sceneID="ApV-29-8Le">
             <objects>
-                <viewController id="lXM-oV-cdY" userLabel="Playlist" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaylistViewController" id="lXM-oV-cdY" userLabel="Playlist" customClass="PlaylistViewController" customModule="CocoaSwiftPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="mvw-ID-vIS">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -127,6 +127,9 @@
                             <constraint firstAttribute="trailing" secondItem="hhm-Hh-3eL" secondAttribute="trailing" id="zM2-D9-EBO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outlineView" destination="iQb-EJ-MfZ" id="N9c-SO-6sx"/>
+                    </connections>
                 </viewController>
                 <customObject id="IPS-Nl-fpO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
