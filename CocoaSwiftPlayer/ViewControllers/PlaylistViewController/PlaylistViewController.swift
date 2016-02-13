@@ -7,10 +7,16 @@
 //
 
 import Cocoa
+import RealmSwift
 
 class PlaylistViewController: NSViewController {
     
-    var strings = ["P1", "P2", "P3"]
+    var playlists = [Playlist]() {
+        didSet {
+            outlineView.reloadData()
+            outlineView.expandItem(nil, expandChildren: true)
+        }
+    }
 
     @IBOutlet weak var outlineView: NSOutlineView!
     
@@ -20,12 +26,27 @@ class PlaylistViewController: NSViewController {
         
         outlineView.setDataSource(self)
         outlineView.setDelegate(self)
+        
+        RealmMigrationManager.migrate()
+        
+        let realm = try! Realm()
+        playlists = realm.objects(Playlist).map { playlist in return playlist }
+    }
+    
+    @IBAction func addPlaylist(sender: AnyObject) {
+        let playlist = Playlist()
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(playlist)
+        }
+        
+        playlists.append(playlist)
     }
     
     // MARK: - Helper
     
     func isHeader(item: AnyObject) -> Bool {
-        return (item as? String) == "Library"
+        return item is String
     }
     
 }
@@ -36,19 +57,19 @@ extension PlaylistViewController: NSOutlineViewDataSource {
         if item == nil {
             return 1
         } else {
-            return strings.count
+            return playlists.count
         }
     }
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        return true
+        return isHeader(item)
     }
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         if item == nil {
             return "Library"
         } else {
-            return strings[index]
+            return playlists[index]
         }
     }
     
@@ -65,7 +86,9 @@ extension PlaylistViewController: NSOutlineViewDelegate {
             return outlineView.makeViewWithIdentifier("HeaderCell", owner: self)
         } else {
             let view = outlineView.makeViewWithIdentifier("DataCell", owner: self) as? NSTableCellView
-            view?.textField?.stringValue = (item as? String)!
+            if let playlist = item as? Playlist {
+                view?.textField?.stringValue = "\(playlist.name) (\(playlist.songs.count))"
+            }
             return view
         }
     }
@@ -75,7 +98,7 @@ extension PlaylistViewController: NSOutlineViewDelegate {
     }
     
     func outlineView(outlineView: NSOutlineView, shouldShowOutlineCellForItem item: AnyObject) -> Bool {
-        return isHeader(item)
+        return false
     }
     
 }

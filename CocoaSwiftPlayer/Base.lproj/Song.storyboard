@@ -35,13 +35,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhm-Hh-3eL">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                <rect key="frame" x="0.0" y="40" width="200" height="360"/>
                                 <clipView key="contentView" drawsBackground="NO" id="ca9-sV-iyo">
-                                    <rect key="frame" x="1" y="1" width="198" height="398"/>
+                                    <rect key="frame" x="1" y="1" width="198" height="358"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="jAx-IM-nPM" id="iQb-EJ-MfZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="358"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -108,7 +108,7 @@
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="kfJ-tY-gC5"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="t7a-ET-OTf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="360" id="t7a-ET-OTf"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ldZ-jO-ENk">
                                     <rect key="frame" x="1" y="119" width="238" height="15"/>
@@ -119,11 +119,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VnT-jj-SsE">
+                                <rect key="frame" x="45" y="2" width="111" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add Playlist" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Xxv-Tz-NML">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addPlaylist:" target="lXM-oV-cdY" id="Ke5-ya-xto"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hhm-Hh-3eL" secondAttribute="bottom" id="ERH-p4-Ikn"/>
+                            <constraint firstAttribute="bottom" secondItem="hhm-Hh-3eL" secondAttribute="bottom" constant="40" id="ERH-p4-Ikn"/>
+                            <constraint firstAttribute="bottom" secondItem="VnT-jj-SsE" secondAttribute="bottom" constant="9" id="KER-d7-hB3"/>
                             <constraint firstItem="hhm-Hh-3eL" firstAttribute="leading" secondItem="mvw-ID-vIS" secondAttribute="leading" id="SGG-M2-e7U"/>
+                            <constraint firstItem="VnT-jj-SsE" firstAttribute="leading" secondItem="mvw-ID-vIS" secondAttribute="leading" constant="51" id="Xmt-Bk-Ek6"/>
                             <constraint firstItem="hhm-Hh-3eL" firstAttribute="top" secondItem="mvw-ID-vIS" secondAttribute="top" id="ba7-kp-i0N"/>
+                            <constraint firstAttribute="trailing" secondItem="VnT-jj-SsE" secondAttribute="trailing" constant="50" id="cfX-uw-t51"/>
                             <constraint firstAttribute="trailing" secondItem="hhm-Hh-3eL" secondAttribute="trailing" id="zM2-D9-EBO"/>
                         </constraints>
                     </view>
