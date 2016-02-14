@@ -36,6 +36,8 @@ class SongListViewController: NSViewController {
         
         tableView.doubleAction = "doubleClick:"
         
+        tableView.setDataSource(self)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeSong:", name: Constants.Notifications.ChangeSong, object: nil)
     }
     
@@ -61,6 +63,18 @@ class SongListViewController: NSViewController {
             tableView.selectRowIndexes(NSIndexSet(index: index), byExtendingSelection: false)
             tableView.scrollRowToVisible(index)
         }
+    }
+    
+}
+
+extension SongListViewController: NSTableViewDataSource {
+    
+    func tableView(tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
+        let song = songs[row]
+        
+        let pbItem = NSPasteboardItem()
+        pbItem.setString(song.location, forType: NSPasteboardTypeString)
+        return pbItem
     }
     
 }
