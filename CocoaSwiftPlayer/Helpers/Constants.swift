@@ -17,10 +17,14 @@ struct Constants {
         static let PausePlaying = "pausePlaying"
         static let NextSong = "nextSong"
         static let PreviousSong = "previousSong"
+        
+        static let SwitchPlaylist = "switchPlaylist"
     }
     
     struct NotificationUserInfos {
         static let Song = "Song"
+        
+        static let Playlist = "Playlist"
     }
     
 }

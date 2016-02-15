@@ -39,6 +39,8 @@ class SongListViewController: NSViewController {
         tableView.setDataSource(self)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeSong:", name: Constants.Notifications.ChangeSong, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchPlaylist:", name: Constants.Notifications.SwitchPlaylist, object: nil)
     }
     
     func doubleClick(sender: NSTableView) {
@@ -63,6 +65,13 @@ class SongListViewController: NSViewController {
             tableView.selectRowIndexes(NSIndexSet(index: index), byExtendingSelection: false)
             tableView.scrollRowToVisible(index)
         }
+    }
+    
+    func switchPlaylist(notification: NSNotification) {
+        guard let playlist = notification.userInfo?[Constants.NotificationUserInfos.Playlist] as? Playlist else { return }
+        
+        songs = playlist.songs.map { song in return song }
+        tableView.reloadData()
     }
     
 }

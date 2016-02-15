@@ -139,4 +139,10 @@ extension PlaylistViewController: NSOutlineViewDelegate {
         return false
     }
     
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        let playlist = playlists[outlineView.selectedRow - 1]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.SwitchPlaylist, object: self, userInfo: [Constants.NotificationUserInfos.Playlist: playlist])
+    }
+    
 }
