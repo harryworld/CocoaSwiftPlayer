@@ -115,21 +115,23 @@ extension PlaylistViewController: NSOutlineViewDataSource {
         return false
     }
     
-}
-
-extension PlaylistViewController: NSOutlineViewDelegate {
-    
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         if isHeader(item) {
             return outlineView.makeViewWithIdentifier("HeaderCell", owner: self)
         } else {
-            let view = outlineView.makeViewWithIdentifier("DataCell", owner: self) as? NSTableCellView
+            let view = outlineView.makeViewWithIdentifier("DataCell", owner: self) as? CustomTableCellView
             if let playlist = item as? Playlist {
-                view?.textField?.stringValue = "\(playlist.name) (\(playlist.songs.count))"
+                view?.textField?.stringValue = "\(playlist.name)"
+                view?.textField?.delegate = self
+                view?.songCount.stringValue = "(\(playlist.songs.count))"
             }
             return view
         }
     }
+    
+}
+
+extension PlaylistViewController: NSOutlineViewDelegate {
     
     func outlineView(outlineView: NSOutlineView, shouldSelectItem item: AnyObject) -> Bool {
         return !isHeader(item)
@@ -143,6 +145,23 @@ extension PlaylistViewController: NSOutlineViewDelegate {
         let playlist = playlists[outlineView.selectedRow - 1]
         
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.SwitchPlaylist, object: self, userInfo: [Constants.NotificationUserInfos.Playlist: playlist])
+    }
+    
+}
+
+extension PlaylistViewController: NSTextFieldDelegate {
+    
+    override func controlTextDidEndEditing(obj: NSNotification) {
+        if let textField = obj.object as? NSTextField {
+            print(textField.stringValue)
+            let row = outlineView.rowForView(textField)
+            let playlist = playlists[row - 1]
+            
+            let realm = try! Realm()
+            try! realm.write {
+                playlist.name = textField.stringValue
+            }
+        }
     }
     
 }
