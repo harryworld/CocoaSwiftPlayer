@@ -38,6 +38,10 @@ class SongListViewController: NSViewController {
         
         tableView.setDataSource(self)
         
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Delete", action: "deleteSongs:", keyEquivalent: ""))
+        tableView.menu = menu
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeSong:", name: Constants.Notifications.ChangeSong, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchPlaylist:", name: Constants.Notifications.SwitchPlaylist, object: nil)
@@ -50,6 +54,23 @@ class SongListViewController: NSViewController {
             manager.currentSong = songs[tableView.selectedRow]
         }
         manager.play()
+    }
+    
+    func deleteSongs(sender: AnyObject) {
+        let songsMutableArray = NSMutableArray(array: songs)
+        let toBeDeletedSongs = songsMutableArray.objectsAtIndexes(tableView.selectedRowIndexes) as? [Song]
+        songsMutableArray.removeObjectsAtIndexes(tableView.selectedRowIndexes)
+        
+        if let mutableArray = songsMutableArray as AnyObject as? [Song] {
+            songs = mutableArray
+            tableView.reloadData()
+        }
+        
+        if let songs = toBeDeletedSongs {
+            for song in songs {
+                song.delete()
+            }
+        }
     }
     
     // MARK: - Notification

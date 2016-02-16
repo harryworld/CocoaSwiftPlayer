@@ -13,5 +13,11 @@ class Playlist: Object {
     
     dynamic var name: String = "Playlist"
     let songs = List<Song>()
+    
+    func delete() {
+        try! realm?.write {
+            realm?.delete(self)
+        }
+    }
 
 }

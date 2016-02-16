@@ -27,6 +27,10 @@ class PlaylistViewController: NSViewController {
         outlineView.setDataSource(self)
         outlineView.setDelegate(self)
         
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Delete", action: "deletePlaylist:", keyEquivalent: ""))
+        outlineView.menu = menu
+        
         RealmMigrationManager.migrate()
         
         let realm = try! Realm()
@@ -43,6 +47,14 @@ class PlaylistViewController: NSViewController {
         }
         
         playlists.append(playlist)
+    }
+    
+    func deletePlaylist(sender: AnyObject) {
+        let playlist = playlists[outlineView.clickedRow - 1]
+        playlists.removeAtIndex(outlineView.clickedRow - 1)
+        outlineView.reloadData()
+        
+        playlist.delete()
     }
     
     // MARK: - Helper
