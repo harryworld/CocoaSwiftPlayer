@@ -687,6 +687,29 @@
             </objects>
             <point key="canvasLocation" x="76" y="759"/>
         </scene>
+        <!--Status Item View Controller-->
+        <scene sceneID="IOS-de-V20">
+            <objects>
+                <viewController storyboardIdentifier="StatusItemViewController" id="Wu3-YL-Bwn" customClass="StatusItemViewController" customModule="CocoaSwiftPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4m2-Me-9YQ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-Uz-bss">
+                                <rect key="frame" x="146" y="263" width="158" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="StatusItemViewController" id="NVl-xs-jaA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="oBY-vh-Iwf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="235"/>
+        </scene>
         <!--PlayerControl-->
         <scene sceneID="AZO-mw-HxJ">
             <objects>

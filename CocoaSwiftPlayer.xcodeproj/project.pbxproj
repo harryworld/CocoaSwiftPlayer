@@ -24,6 +24,8 @@
 		D1E5BAD41C5D004C00C7F35E /* CocoaSwiftPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAD31C5D004C00C7F35E /* CocoaSwiftPlayerUITests.swift */; };
 		D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5BAE61C5E473F00C7F35E /* Song.swift */; };
 		D1F782FD1C721A4B00E7C80A /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F782FC1C721A4B00E7C80A /* CustomTableCellView.swift */; };
+		D1F783091C74B23000E7C80A /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F783081C74B23000E7C80A /* EventMonitor.swift */; };
+		D1F7830C1C74B4BC00E7C80A /* StatusItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7830B1C74B4BC00E7C80A /* StatusItemViewController.swift */; };
 		D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF0A431C638A03001BC61F /* SongManager.swift */; };
 		D1FF0A491C639081001BC61F /* iTunesLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FF0A481C639081001BC61F /* iTunesLibrary.framework */; };
 		D1FF0A541C64DC6F001BC61F /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF0A531C64DC6F001BC61F /* SongListViewController.swift */; };
@@ -73,6 +75,8 @@
 		D1E5BAD51C5D004C00C7F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1E5BAE61C5E473F00C7F35E /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = Models/Song.swift; sourceTree = "<group>"; };
 		D1F782FC1C721A4B00E7C80A /* CustomTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableCellView.swift; path = ViewControllers/PlaylistViewController/CustomTableCellView.swift; sourceTree = "<group>"; };
+		D1F783081C74B23000E7C80A /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Helpers/EventMonitor.swift; sourceTree = "<group>"; };
+		D1F7830B1C74B4BC00E7C80A /* StatusItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusItemViewController.swift; path = ViewControllers/StatusItemViewController/StatusItemViewController.swift; sourceTree = "<group>"; };
 		D1FF0A431C638A03001BC61F /* SongManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongManager.swift; path = Managers/SongManager.swift; sourceTree = "<group>"; };
 		D1FF0A481C639081001BC61F /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
 		D1FF0A531C64DC6F001BC61F /* SongListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongListViewController.swift; path = ViewControllers/SongListViewController/SongListViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 		D1E5BAE31C5E46CE00C7F35E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1F7830A1C74B49200E7C80A /* StatusItemViewController */,
 				D1573EFA1C6DFA1800773B8E /* PlaylistViewController */,
 				D1FF0A521C64DC53001BC61F /* SongListViewController */,
 				D1AD36481C624A0F003881F9 /* PlayerViewController */,
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				D1573EF81C6B7ABD00773B8E /* Constants.swift */,
+				D1F783081C74B23000E7C80A /* EventMonitor.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -242,6 +248,14 @@
 				D1FF0A551C64E0FD001BC61F /* RealmMigrationManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		D1F7830A1C74B49200E7C80A /* StatusItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D1F7830B1C74B4BC00E7C80A /* StatusItemViewController.swift */,
+			);
+			name = StatusItemViewController;
 			sourceTree = "<group>";
 		};
 		D1FF0A521C64DC53001BC61F /* SongListViewController */ = {
@@ -450,10 +464,12 @@
 				D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */,
 				D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */,
 				D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */,
+				D1F783091C74B23000E7C80A /* EventMonitor.swift in Sources */,
 				D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */,
 				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
 				D1FF0A561C64E0FD001BC61F /* RealmMigrationManager.swift in Sources */,
+				D1F7830C1C74B4BC00E7C80A /* StatusItemViewController.swift in Sources */,
 				D1573EFC1C6DFA3500773B8E /* PlaylistViewController.swift in Sources */,
 				D1AD364A1C624A3D003881F9 /* PlayerViewController.swift in Sources */,
 				D1E5BAB91C5D004C00C7F35E /* ViewController.swift in Sources */,
