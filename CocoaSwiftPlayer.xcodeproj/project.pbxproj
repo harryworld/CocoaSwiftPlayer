@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D40A389FE41AD18C941333C /* Pods_CocoaSwiftPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */; };
+		D114E5561C76141E00C6B955 /* CustomTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114E5551C76141E00C6B955 /* CustomTableHeaderView.swift */; };
 		D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */; };
 		D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */; };
 		D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF81C6B7ABD00773B8E /* Constants.swift */; };
@@ -53,6 +54,7 @@
 		5DF224AE1278AFB8E2C02CBE /* Pods-CocoaSwiftPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		8752F31DED0A63E6E4DBE1FF /* Pods-CocoaSwiftPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaSwiftPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D114E5551C76141E00C6B955 /* CustomTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableHeaderView.swift; path = Views/Headers/CustomTableHeaderView.swift; sourceTree = "<group>"; };
 		D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollectionType+Extensions.swift"; path = "Extensions/MutableCollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+Extensions.swift"; path = "Extensions/CollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF81C6B7ABD00773B8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 				A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D114E5541C7613F700C6B955 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				D114E5551C76141E00C6B955 /* CustomTableHeaderView.swift */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 		D1573EF11C6A1F0500773B8E /* Extensions */ = {
@@ -214,6 +224,7 @@
 		D1E5BAE21C5E46C900C7F35E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D114E5541C7613F700C6B955 /* Headers */,
 				D1E5BABC1C5D004C00C7F35E /* Main.storyboard */,
 				D19D07C21C5FAFB600FEBBC2 /* Song.storyboard */,
 			);
@@ -466,6 +477,7 @@
 				D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */,
 				D1F783091C74B23000E7C80A /* EventMonitor.swift in Sources */,
 				D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */,
+				D114E5561C76141E00C6B955 /* CustomTableHeaderView.swift in Sources */,
 				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
 				D1FF0A561C64E0FD001BC61F /* RealmMigrationManager.swift in Sources */,
