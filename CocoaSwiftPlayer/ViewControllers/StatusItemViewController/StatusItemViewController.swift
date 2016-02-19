@@ -26,6 +26,9 @@ class StatusItemViewController: PlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        let manager = PlayerManager.sharedManager
+        volumeSlider.floatValue = manager.volume
     }
     
 }

@@ -17,6 +17,7 @@ struct Constants {
         static let PausePlaying = "pausePlaying"
         static let NextSong = "nextSong"
         static let PreviousSong = "previousSong"
+        static let VolumeChanged = "volumeChanged"
         
         static let SwitchPlaylist = "switchPlaylist"
     }

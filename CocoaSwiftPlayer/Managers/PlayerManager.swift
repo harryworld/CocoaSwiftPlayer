@@ -83,6 +83,8 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     var volume: Float = 0.5 {
         didSet {
             player?.volume = volume
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.VolumeChanged, object: self)
         }
     }
     

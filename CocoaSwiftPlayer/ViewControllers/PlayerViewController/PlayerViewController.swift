@@ -40,6 +40,8 @@ class PlayerViewController: NSViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "startPlaying:", name: Constants.Notifications.StartPlaying, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "pausePlaying:", name: Constants.Notifications.PausePlaying, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "volumeChanged:", name: Constants.Notifications.VolumeChanged, object: nil)
     }
     
     // MARK: - IBAction
@@ -89,6 +91,10 @@ class PlayerViewController: NSViewController {
     func pausePlaying(notification: NSNotification) {
         songTimer?.invalidate()
         songTimer = nil
+    }
+    
+    func volumeChanged(notification: NSNotification) {
+        volumeSlider.floatValue = manager.volume
     }
     
     // MARK: - Timer
