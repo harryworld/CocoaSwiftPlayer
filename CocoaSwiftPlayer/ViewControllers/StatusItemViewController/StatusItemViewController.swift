@@ -31,6 +31,7 @@ class StatusItemViewController: PlayerViewController {
         volumeSlider.floatValue = manager.volume
         if manager.isPlaying {
             songTitleLabel.stringValue = manager.currentSong!.title
+            timeLabel.stringValue = manager.songProgressText
         }
     }
     

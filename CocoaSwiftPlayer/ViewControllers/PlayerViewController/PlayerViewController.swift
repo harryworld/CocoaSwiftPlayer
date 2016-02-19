@@ -29,7 +29,6 @@ class PlayerViewController: NSViewController {
     let manager = PlayerManager.sharedManager
     
     var songTimer: NSTimer?
-    var songProgress: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +36,9 @@ class PlayerViewController: NSViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeSong:", name: Constants.Notifications.ChangeSong, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "startPlaying:", name: Constants.Notifications.StartPlaying, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pausePlaying:", name: Constants.Notifications.PausePlaying, object: nil)
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "volumeChanged:", name: Constants.Notifications.VolumeChanged, object: nil)
+        
+        songTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateProgress", userInfo: nil, repeats: true)
     }
     
     // MARK: - IBAction
@@ -77,34 +74,16 @@ class PlayerViewController: NSViewController {
         guard let song = notification.userInfo?[Constants.NotificationUserInfos.Song] as? Song else { return }
         
         timeLabel.stringValue = "0:00"
-        songProgress = 0
-        songTimer?.invalidate()
-        songTimer = nil
         
         songTitleLabel.stringValue = song.title
-    }
-    
-    func startPlaying(notification: NSNotification) {
-        songTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateProgress", userInfo: nil, repeats: true)
-    }
-    
-    func pausePlaying(notification: NSNotification) {
-        songTimer?.invalidate()
-        songTimer = nil
     }
     
     func volumeChanged(notification: NSNotification) {
         volumeSlider.floatValue = manager.volume
     }
-    
-    // MARK: - Timer
-    
+
     func updateProgress() {
-        songProgress++
-        let formatter = NSDateComponentsFormatter()
-        formatter.allowedUnits = [.Minute, .Second]
-        formatter.zeroFormattingBehavior = .Pad
-        timeLabel.stringValue = "\(formatter.stringFromTimeInterval(songProgress)!)"
+        timeLabel.stringValue = manager.songProgressText
     }
     
 }

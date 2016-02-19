@@ -37,6 +37,9 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
                     player?.volume = volume
                 }
                 
+                songTimer = nil
+                songProgress = 0
+                
                 NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.ChangeSong, object: self, userInfo: [Constants.NotificationUserInfos.Song: currentSong])
             } else {
                 stop()
@@ -88,6 +91,24 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
         }
     }
     
+    var songTimer: NSTimer? {
+        didSet {
+            oldValue?.invalidate()
+        }
+    }
+    var songProgress: Double = 0
+    var songProgressText: String {
+        get {
+            return "\(timeFormatter.stringFromTimeInterval(songProgress)!)"
+        }
+    }
+    lazy var timeFormatter: NSDateComponentsFormatter = {
+        let formatter = NSDateComponentsFormatter()
+        formatter.allowedUnits = [.Minute, .Second]
+        formatter.zeroFormattingBehavior = .Pad
+        return formatter
+    }()
+    
     // MARK: - Lifecycle Methods
     
     override init() {
@@ -116,11 +137,15 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
         
         player?.play()
         
+        songTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateProgress", userInfo: nil, repeats: true)
+        
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.StartPlaying, object: self, userInfo: [Constants.NotificationUserInfos.Song: currentSong!])
     }
     
     func pause() {
         player?.pause()
+        
+        songTimer = nil
         
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.PausePlaying, object: self, userInfo: [Constants.NotificationUserInfos.Song: currentSong!])
     }
@@ -160,6 +185,12 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     private func loadAllSongs() {
         let realm = try! Realm()
         playList = realm.objects(Song).map { song in return song}
+    }
+    
+    // MARK: - NSTimer
+    
+    func updateProgress() {
+        songProgress++
     }
 
 }
