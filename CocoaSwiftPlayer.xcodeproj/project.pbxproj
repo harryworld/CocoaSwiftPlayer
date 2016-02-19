@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D40A389FE41AD18C941333C /* Pods_CocoaSwiftPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */; };
 		D114E5561C76141E00C6B955 /* CustomTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D114E5551C76141E00C6B955 /* CustomTableHeaderView.swift */; };
+		D13AA6081C774DE700E7F265 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13AA6071C774DE700E7F265 /* MainWindowController.swift */; };
 		D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */; };
 		D1573EF51C6A1FDA00773B8E /* CollectionType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */; };
 		D1573EF91C6B7ABD00773B8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1573EF81C6B7ABD00773B8E /* Constants.swift */; };
@@ -55,6 +56,7 @@
 		8752F31DED0A63E6E4DBE1FF /* Pods-CocoaSwiftPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaSwiftPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaSwiftPlayer/Pods-CocoaSwiftPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		A019104BDEFACC093DBB5F65 /* Pods_CocoaSwiftPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaSwiftPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D114E5551C76141E00C6B955 /* CustomTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableHeaderView.swift; path = Views/Headers/CustomTableHeaderView.swift; sourceTree = "<group>"; };
+		D13AA6071C774DE700E7F265 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
 		D1573EF21C6A1F2200773B8E /* MutableCollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollectionType+Extensions.swift"; path = "Extensions/MutableCollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF41C6A1FDA00773B8E /* CollectionType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+Extensions.swift"; path = "Extensions/CollectionType+Extensions.swift"; sourceTree = "<group>"; };
 		D1573EF81C6B7ABD00773B8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				D1573EFA1C6DFA1800773B8E /* PlaylistViewController */,
 				D1FF0A521C64DC53001BC61F /* SongListViewController */,
 				D1AD36481C624A0F003881F9 /* PlayerViewController */,
+				D13AA6071C774DE700E7F265 /* MainWindowController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				D1FF0A441C638A03001BC61F /* SongManager.swift in Sources */,
 				D1F783091C74B23000E7C80A /* EventMonitor.swift in Sources */,
 				D1573EF31C6A1F2200773B8E /* MutableCollectionType+Extensions.swift in Sources */,
+				D13AA6081C774DE700E7F265 /* MainWindowController.swift in Sources */,
 				D114E5561C76141E00C6B955 /* CustomTableHeaderView.swift in Sources */,
 				D1AD364C1C624C6E003881F9 /* PlayerManager.swift in Sources */,
 				D1E5BAE71C5E473F00C7F35E /* Song.swift in Sources */,
