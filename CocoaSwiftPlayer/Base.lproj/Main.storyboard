@@ -849,7 +849,10 @@
                                                     <constraint firstAttribute="width" constant="146" id="VXb-5Q-e0x"/>
                                                     <constraint firstAttribute="height" constant="17" id="vvM-GZ-0ab"/>
                                                 </constraints>
-                                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="WME-76-1BM"/>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="WME-76-1BM"/>
+                                                <connections>
+                                                    <action selector="slideVolume:" target="Wu3-YL-Bwn" id="qfK-6r-NGg"/>
+                                                </connections>
                                             </slider>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-Nc-Ax5">
                                                 <rect key="frame" x="169" y="2" width="14" height="14"/>
@@ -950,7 +953,10 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="ihj-bD-3m2"/>
                                                             <constraint firstAttribute="height" constant="17" id="zDA-uu-GKL"/>
                                                         </constraints>
-                                                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="FDL-lQ-BwV"/>
+                                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="FDL-lQ-BwV"/>
+                                                        <connections>
+                                                            <action selector="slideVolume:" target="e63-Lz-MPj" id="VHm-ad-KmW"/>
+                                                        </connections>
                                                     </slider>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVh-hJ-DZL">
                                                         <rect key="frame" x="169" y="2" width="14" height="14"/>

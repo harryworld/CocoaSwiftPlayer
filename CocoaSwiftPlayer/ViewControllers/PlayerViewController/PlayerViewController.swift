@@ -52,6 +52,10 @@ class PlayerViewController: NSViewController {
         manager.rewind()
     }
     
+    @IBAction func slideVolume(sender: NSSlider) {
+        manager.volume = sender.floatValue
+    }
+    
     @IBAction func next(sender: NSButton) {
         manager.next()
     }

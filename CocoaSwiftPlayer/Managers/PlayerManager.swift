@@ -80,7 +80,11 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
             }
         }
     }
-    var volume: Float = 0.5
+    var volume: Float = 0.5 {
+        didSet {
+            player?.volume = volume
+        }
+    }
     
     // MARK: - Lifecycle Methods
     
