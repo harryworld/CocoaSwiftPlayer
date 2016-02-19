@@ -29,6 +29,9 @@ class StatusItemViewController: PlayerViewController {
         
         let manager = PlayerManager.sharedManager
         volumeSlider.floatValue = manager.volume
+        if manager.isPlaying {
+            songTitleLabel.stringValue = manager.currentSong!.title
+        }
     }
     
 }
