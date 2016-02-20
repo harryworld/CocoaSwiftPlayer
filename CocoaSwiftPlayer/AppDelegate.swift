@@ -18,9 +18,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         
-        statusItem.title = ""
+        PlayerManager.sharedManager.statusItem = statusItem
         
         if let button = statusItem.button {
+            button.imagePosition = .ImageLeft
             button.image = NSImage(named: "Star")
             button.action = Selector("togglePopover:")
         }

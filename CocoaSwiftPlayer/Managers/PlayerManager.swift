@@ -14,6 +14,8 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     
     static var sharedManager = PlayerManager()
     
+    var statusItem: NSStatusItem?
+    
     var isPlaying: Bool {
         if let player = player {
             return player.playing
@@ -191,6 +193,7 @@ class PlayerManager: NSObject, AVAudioPlayerDelegate {
     
     func updateProgress() {
         songProgress++
+        statusItem?.button?.title = songProgressText
     }
 
 }
