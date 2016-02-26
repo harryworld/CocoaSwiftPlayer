@@ -16,6 +16,7 @@ class Song: Object {
 
     dynamic var title: String = ""
     dynamic var location: String = ""
+    dynamic var album: String = ""
     dynamic var length: Double = 0.0
     dynamic var artist: String = ""
     dynamic var playCount: Int = 0

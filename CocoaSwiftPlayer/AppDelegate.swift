@@ -10,6 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var windowController: MainWindowController?
 
     let popover = NSPopover()
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
@@ -17,6 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        
+        print("AppDelegate")
+        
+        RealmMigrationManager.migrate()
         
         PlayerManager.sharedManager.statusItem = statusItem
         
@@ -33,6 +39,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.closePopover(event)
             }
         })
+        
+        // Load Window Controller
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        windowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
+        windowController?.showWindow(self)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

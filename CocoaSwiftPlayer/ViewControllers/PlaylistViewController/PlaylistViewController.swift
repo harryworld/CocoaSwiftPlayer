@@ -23,6 +23,7 @@ class PlaylistViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        print("PlaylistViewController viewDidLoad")
         
         outlineView.setDataSource(self)
         outlineView.setDelegate(self)
@@ -30,8 +31,6 @@ class PlaylistViewController: NSViewController {
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Delete", action: "deletePlaylist:", keyEquivalent: ""))
         outlineView.menu = menu
-        
-        RealmMigrationManager.migrate()
         
         let realm = try! Realm()
         playlists = realm.objects(Playlist).map { playlist in return playlist }

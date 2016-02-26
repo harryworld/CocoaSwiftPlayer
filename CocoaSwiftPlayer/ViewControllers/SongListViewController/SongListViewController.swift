@@ -18,8 +18,7 @@ class SongListViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        RealmMigrationManager.migrate()
+        print("SongListViewController viewDidLoad")
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if !defaults.boolForKey("APP_LAUNCHED") {
